@@ -17,6 +17,7 @@ class TicTac
 private:
 	char board[3][3];
 	bool move(int, int);
+	int SecondChnc();
 
 public:
 	TicTac();

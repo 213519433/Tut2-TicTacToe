@@ -98,51 +98,48 @@ void TicTac::player1(int pos)
 		{
 		case 1:{
 			if (move(0, 0) == true) { board[0][0] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player1(SecondChnc()); }
 			break;
 		}
 		case 2:{
 			if (move(0, 1) == true) { board[0][1] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;}
+			else { player1(SecondChnc()); }
 			break;
 		}
 		case 3:{
 			if (move(0, 2) == true) { board[0][2] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player1(SecondChnc()); }
 			break;
 		}
 		case 4:{
 			if (move(1, 0) == true) { board[1][0] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;}
+			else { player1(SecondChnc()); }
 			break;
 		}
 		case 5:{
 			if (move(1, 1) == true) { board[1][1] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player1(SecondChnc()); }
 			break;
 		}
 		case 6:{
 			if (move(1, 2) == true) { board[1][2] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;}
+			else { player1(SecondChnc()); }
 			break;
 		}
 		case 7:{
 			if (move(2, 0) == true) { board[2][0] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player1(SecondChnc()); }
 			break;
 		}
 		case 8:{
 			if (move(2, 1) == true) { board[2][1] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player1(SecondChnc()); }
 			break;
 		}
 		case 9:{
 			if (move(2, 2) == true) { board[2][2] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player1(SecondChnc()); }
 			break;
-		}
-		default:{
-			cout << endl << " Invalid Move!!!" << endl;
 		}
 		}
 	}
@@ -151,57 +148,55 @@ void TicTac::player1(int pos)
 // Player Two's play
 void TicTac::player2(int pos)
 {
+
 	if (checkWin() != true)
 	{
 		switch (pos)
 		{
 		case 1:{
 			if (move(0, 0) == true) { board[0][0] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player2(SecondChnc()); }
 			break;
 		}
 		case 2:{
 			if (move(0, 1) == true) { board[0][1] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player2(SecondChnc()); }
 			break;
 		}
 		case 3:{
 			if (move(0, 2) == true) { board[0][2] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player2(SecondChnc()); }
 			break;
 		}
 		case 4:{
 			if (move(1, 0) == true) { board[1][0] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player2(SecondChnc()); }
 			break;
 		}
 		case 5:{
 			if (move(1, 1) == true) { board[1][1] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player2(SecondChnc()); }
 			break;
 		}
 		case 6:{
 			if (move(1, 2) == true) { board[1][2] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player2(SecondChnc()); }
 			break;
 		}
 		case 7:{
 			if (move(2, 0) == true) { board[2][0] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player2(SecondChnc()); }
 			break;
 		}
 		case 8:{
 			if (move(2, 1) == true) { board[2][1] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player2(SecondChnc()); }
 			break;
 		}
 		case 9:{
 			if (move(2, 2) == true) { board[2][2] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl; }
+			else { player2(SecondChnc()); }
 			break;
-		}
-		default:{
-			cout << endl << " Invalid Move!!!" << endl;
 		}
 		}
 	}
@@ -212,4 +207,15 @@ bool TicTac::move(int row, int col)
 {
 	if (board[row][col] == 'X' || board[row][col] == 'O') { return false; }
 	else { return true; }
+}
+
+// Second Play Attempt
+int TicTac:: SecondChnc()
+{
+	int ScndChnc;
+
+	cout << " Invalid Play!! Try Again : ";
+	cin >> ScndChnc;
+	return ScndChnc;
+
 }
