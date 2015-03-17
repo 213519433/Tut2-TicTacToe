@@ -11,6 +11,8 @@ Main prgrame testing TicTac Class
 
 using namespace std;
 
+void play(bool, bool, string);
+
 int main()
 {
 	int p;
@@ -32,29 +34,31 @@ start:{
 
 	while (1)
 	{
-		// Player One
+		// Player One Turn
 		cout << endl << " " << plyr1 << " your Turn (X): "; cin >> p; toe.player1(p);
 		cout << " ----------------------------" << endl;
 
-		if (toe.checkWin() == true) { cout << " " << plyr1 << " WIN!" << endl; toe.disBoard(); cout << endl << endl; break; }
-		else if (toe.checkDraw() == true) { cout << " Draw!" << endl; toe.disBoard(); cout << endl << endl; break; }
-
+		if (toe.checkWin() == true || toe.checkDraw() == true) {
+			play(toe.checkWin(), toe.checkDraw(), plyr1); toe.disBoard(); break;
+		}
+		
 		toe.disBoard();
 		cout << endl << " ----------------------------" << endl;
 
-		// Player Two
+		// Player Two Turn
 		cout << " " << plyr2 << " your Turn (O): "; cin >> p; toe.player2(p);
 		cout << " ----------------------------" << endl;
 
-		if (toe.checkWin() == true) { cout << " " << plyr2 << " WIN!" << endl; toe.disBoard(); cout << endl << endl; break; }
-		else if (toe.checkDraw() == true) { cout << " Draw!" << endl; toe.disBoard(); cout << endl << endl; break; }
+		if (toe.checkWin() == true || toe.checkDraw() == true){
+			play(toe.checkWin(), toe.checkDraw(), plyr2); toe.disBoard(); break;
+		}
 
 		toe.disBoard();
 		cout << endl << " ----------------------------";
 	}
 }
 	  int choice;
-	  cout << " ============================" << endl;
+	  cout << endl << " ============================" << endl;
 	  cout << " 1. New game." << endl << " 2. Exit." << endl << " > ";
 
   nwGmOrExt:{
@@ -83,4 +87,10 @@ start:{
 			cout << endl << " ============================" << endl << endl;
 			system("pause");
 			return 0;
+}
+
+void play(bool Win, bool Draw, string Name)
+{
+	if (Win == true) { cout << " " << Name << " WIN!" << endl; }
+	else if (Draw == true) { cout << " Draw!" << endl; }
 }

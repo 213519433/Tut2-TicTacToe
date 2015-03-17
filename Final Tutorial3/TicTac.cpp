@@ -86,11 +86,7 @@ bool TicTac::checkDraw()
 // Resetting the board
 void TicTac::RESTART()
 {
-
-	board[0][0] = '1'; board[0][1] = '2'; board[0][2] = '3';
-	board[1][0] = '4'; board[1][1] = '5'; board[1][2] = '6';
-	board[2][0] = '7'; board[2][1] = '8'; board[2][2] = '9';
-
+	TicTac();
 }
 
 // Player one's play
@@ -107,42 +103,42 @@ void TicTac::player1(int pos)
 		}
 		case 2:{
 			if (move(0, 1) == true) { board[0][1] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl;}
 			break;
 		}
 		case 3:{
 			if (move(0, 2) == true) { board[0][2] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 4:{
 			if (move(1, 0) == true) { board[1][0] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl;}
 			break;
 		}
 		case 5:{
 			if (move(1, 1) == true) { board[1][1] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 6:{
 			if (move(1, 2) == true) { board[1][2] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl;}
 			break;
 		}
 		case 7:{
 			if (move(2, 0) == true) { board[2][0] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 8:{
 			if (move(2, 1) == true) { board[2][1] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 9:{
 			if (move(2, 2) == true) { board[2][2] = 'X'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		default:{
@@ -161,47 +157,47 @@ void TicTac::player2(int pos)
 		{
 		case 1:{
 			if (move(0, 0) == true) { board[0][0] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 2:{
 			if (move(0, 1) == true) { board[0][1] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 3:{
 			if (move(0, 2) == true) { board[0][2] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 4:{
 			if (move(1, 0) == true) { board[1][0] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 5:{
 			if (move(1, 1) == true) { board[1][1] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 6:{
 			if (move(1, 2) == true) { board[1][2] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 7:{
 			if (move(2, 0) == true) { board[2][0] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 8:{
 			if (move(2, 1) == true) { board[2][1] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		case 9:{
 			if (move(2, 2) == true) { board[2][2] = 'O'; }
-			else { cout << endl << " Invalid Play!!" << endl;; }
+			else { cout << endl << " Invalid Play!!" << endl; }
 			break;
 		}
 		default:{
