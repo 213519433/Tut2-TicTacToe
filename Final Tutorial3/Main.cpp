@@ -35,28 +35,42 @@ start:{
 	while (1)
 	{
 		// Player One Turn
-		cout << endl << " " << plyr1 << " your Turn (X): "; cin >> p; toe.player1(p);
-		cout << " ----------------------------" << endl;
+		cout << endl << " " << plyr1 << " your Turn (X): ";
 
-		if (toe.checkWin() == true || toe.checkDraw() == true) {
-			play(toe.checkWin(), toe.checkDraw(), plyr1); toe.disBoard(); break;
-		}
-		
-		toe.disBoard();
-		cout << endl << " ----------------------------" << endl;
+		p = 13;
+		cin >> p;
 
-		// Player Two Turn
-		cout << " " << plyr2 << " your Turn (O): "; cin >> p; toe.player2(p);
-		cout << " ----------------------------" << endl;
+			toe.player1(p);
+			cout << " ----------------------------" << endl;
+			/*
+				If there is a win or draw Break out of the loop
+				*/
+			if (toe.checkWin() == true || toe.checkDraw() == true) {
+				play(toe.checkWin(), toe.checkDraw(), plyr1); toe.disBoard(); break;
+			}
 
-		if (toe.checkWin() == true || toe.checkDraw() == true){
-			play(toe.checkWin(), toe.checkDraw(), plyr2); toe.disBoard(); break;
-		}
+			toe.disBoard();
+			cout << endl << " ----------------------------" << endl;
 
-		toe.disBoard();
-		cout << endl << " ----------------------------";
+			// Player Two Turn
+			cout << " " << plyr2 << " your Turn (O): "; cin >> p; toe.player2(p);
+			cout << " ----------------------------" << endl;
+			/*
+			If there is a win or draw Break out of the loop
+			*/
+			if (toe.checkWin() == true || toe.checkDraw() == true){
+				play(toe.checkWin(), toe.checkDraw(), plyr2); toe.disBoard(); break;
+			}
+
+			toe.disBoard();
+			cout << endl << " ----------------------------";
+	
 	}
 }
+
+	  /*
+		Options for New Game or Exiting the Game
+	  */
 	  int choice;
 	  cout << endl << " ============================" << endl;
 	  cout << " 1. New game." << endl << " 2. Exit." << endl << " > ";
@@ -91,6 +105,9 @@ start:{
 
 void play(bool Win, bool Draw, string Name)
 {
+	/*
+		Returns a win (Winner) or draw
+	*/
 	if (Win == true) { cout << " " << Name << " WIN!" << endl; }
 	else if (Draw == true) { cout << " Draw!" << endl; }
 }
